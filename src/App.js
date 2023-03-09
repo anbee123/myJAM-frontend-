@@ -5,13 +5,13 @@ import HomePage from './components/Home'
 import LoginPage from './components/Login'
 import SignupPage from './components/Signup'
 import { useEffect } from 'react';
-import { testApi } from './apis/auth'
+import * as Auth from './apis/auth'
 
 function App() {
   useEffect(() => {
     const funcAPI = async () => {
       try {
-        const data = await testApi()
+        const data = await Auth.testApi()
         console.log({data})
       } catch (err) {
         console.log(err.response.data)
