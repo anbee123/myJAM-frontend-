@@ -9,7 +9,7 @@ import * as Auth from './apis/auth'
 
 function App() {
   useEffect(() => {
-    const funcAPI = async () => {
+    const testAPI = async () => {
       try {
         const res = await Auth.testApi()
         console.log({res})
@@ -17,7 +17,7 @@ function App() {
         console.log(err.response.data)
       }
     }
-    funcAPI()
+    testAPI()
   }, [])
   return (
     <div className="App">
