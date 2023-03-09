@@ -3,6 +3,7 @@ import * as Auth from '../apis/auth'
 
 const Signup = () => {
   const [errorText, setErrorText] = useState()
+
   const handleSignup = async (e) => {
     e.preventDefault()
     console.log(e.target.email.value)
@@ -21,8 +22,13 @@ const Signup = () => {
       setErrorText('User Name is required')
       return
     }
-    const newUser = await Auth.signup({username, email, password})
-    console.log({newUser})
+
+    try {
+      const newUser = await Auth.signup({username, email, password})
+      console.log({newUser})
+    } catch {
+      return
+    }
   }
   return (
     <div>
