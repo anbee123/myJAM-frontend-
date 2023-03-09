@@ -7,7 +7,7 @@ export const testApi = async () => {
   return res.data
 }
 
-export const signup = async ({email, username, password}) => {
-  const res = await axios.post(API_URL + '/signup', {email, username, password})
+export const signup = async ({username, email, password}) => {
+  const res = await axios.post(API_URL + '/auth/signup', {username, email, password})
   return res.data
 }

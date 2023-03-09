@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import * as Auth from '../apis/auth'
 
 const Signup = () => {
   const [errorText, setErrorText] = useState()
-  const handleLogin = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault()
     console.log(e.target.email.value)
     console.log(e.target.password.value)
@@ -20,11 +21,13 @@ const Signup = () => {
       setErrorText('User Name is required')
       return
     }
+    const newUser = await Auth.signup({username, email, password})
+    console.log({newUser})
   }
   return (
     <div>
       <h1>Signup</h1>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSignup}>
         <div>
           <label htmlFor="username">User Name</label>
           <input type='text' name="username" placeholder="User Name" />
