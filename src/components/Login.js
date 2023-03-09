@@ -1,5 +1,8 @@
 const Login = () => {
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault()
+    console.log(e.target.email.value)
+    console.log(e.target.password.value)
   }
   return (
     <div>
