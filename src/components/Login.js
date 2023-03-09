@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import * as Auth from '../apis/auth'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate = useNavigate()
+
   const [errorText, setErrorText] = useState()
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -17,8 +20,13 @@ const Login = () => {
       return
     }
 
-    const user = await Auth.login({username, password})
-    console.log({user})
+    try {
+      const user = await Auth.login({username, password})
+      console.log({user})
+      navigate('/')
+    } catch (err) {
+      return
+    }
   }
   return (
     <div>
