@@ -11,8 +11,8 @@ function App() {
   useEffect(() => {
     const funcAPI = async () => {
       try {
-        const data = await Auth.testApi()
-        console.log({data})
+        const res = await Auth.testApi()
+        console.log({res})
       } catch (err) {
         console.log(err.response.data)
       }
