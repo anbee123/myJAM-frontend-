@@ -1,13 +1,14 @@
 import { useState } from 'react'
+import * as Auth from '../apis/auth'
 
 const Login = () => {
   const [errorText, setErrorText] = useState()
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
-    console.log(e.target.password.value)
     console.log(e.target.username.value)
-    const password = e.target.password.value
+    console.log(e.target.password.value)
     const username = e.target.username.value
+    const password = e.target.password.value
     if (!username) {
       setErrorText('User Name is required')
       return
@@ -15,6 +16,9 @@ const Login = () => {
       setErrorText('Password is required')
       return
     }
+
+    const user = await Auth.login({username, password})
+    console.log({user})
   }
   return (
     <div>
