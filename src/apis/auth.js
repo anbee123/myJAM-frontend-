@@ -19,3 +19,7 @@ export const login = async ({username, password}) => {
   }
   return res.data
 }
+
+export const getCurrentUser = () => {
+  return JSON.parse(localStorage.getItem("user"));
+};
