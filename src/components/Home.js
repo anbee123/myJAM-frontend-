@@ -31,7 +31,7 @@ const Home = () => {
     <div>
       this is Home Page
       Logged in
-      <MusicList />
+      <MusicList musics={musics} />
     </div>
   )
 }
