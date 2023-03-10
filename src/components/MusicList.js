@@ -1,9 +1,11 @@
+import MusicItem from "./MusicItem"
+
 const MusicList = ({musics}) => {
   return (
     <div>
       This is music list
       {musics.map(item => (
-        <div>{item.title}</div>
+        <MusicItem musicItem={item} />
       ))}
     </div>
   )
