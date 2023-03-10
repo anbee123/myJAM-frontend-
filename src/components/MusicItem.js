@@ -1,16 +1,20 @@
 import styled from "styled-components"
 
-const MusicItem = ({musicItem}) => {
+const MusicCard = ({musicItem}) => {
   return (
-    <ItemContainer>
+    <CardContainer>
+      <img src={musicItem.thumb} alt={musicItem.title} />
       {musicItem.title}
-    </ItemContainer>
+    </CardContainer>
   )
 }
-export default MusicItem
+export default MusicCard
 
-const ItemContainer = styled.div`
+const CardContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 19%;
+  min-width: 200px;
   padding: 0.5rem;
   margin: 0.2rem;
   border: 1px solid rgba(0,0,0,0.2);

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import MusicItem from "./MusicItem"
+import MusicCard from "./MusicItem"
 
 const MusicList = ({musics}) => {
   return (
@@ -7,7 +7,7 @@ const MusicList = ({musics}) => {
       <h2>This is music list</h2>
       <ListContainer>
         {musics.map(item => (
-          <MusicItem musicItem={item} />
+          <MusicCard musicItem={item} />
         ))}
       </ListContainer>
     </div>
@@ -17,5 +17,6 @@ export default MusicList
 
 const ListContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 `
