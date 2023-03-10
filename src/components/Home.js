@@ -22,12 +22,6 @@ const Home = () => {
   }, [])
 
   return (
-    !currentUser ?
-    <div>
-      this is Home Page
-      <h1>Please login</h1>
-    </div>
-    :
     <div>
       this is Home Page
       Logged in

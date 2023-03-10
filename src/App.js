@@ -6,6 +6,7 @@ import LoginPage from './components/Login'
 import SignupPage from './components/Signup'
 import { useEffect } from 'react';
 import * as Auth from './apis/auth'
+import Header from './components/Header';
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
   }, [])
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />
