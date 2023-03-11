@@ -3,7 +3,7 @@ import styled from "styled-components"
 const MusicCard = ({musicItem}) => {
   return (
     <CardContainer>
-      <img src={musicItem.thumb} alt={musicItem.title} />
+      {/* <img src={musicItem.thumb} alt={musicItem.title} /> */}
       {musicItem.title}
     </CardContainer>
   )
