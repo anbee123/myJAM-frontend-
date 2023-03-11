@@ -1,14 +1,27 @@
 import { useState } from "react"
+import { useNavigate, NavLink } from "react-router-dom"
 import styled from "styled-components"
 import Logo from '../assets/logo.jpeg'
+import { getCurrentUser } from '../apis/auth'
 
 const Header = ({searchKey, setSearchKey}) => {
+  const currentLogin = getCurrentUser()
+  const navigate = useNavigate()
   const handleClick = () => {
     console.log({searchKey})
   }
+  const handleLogin = () => {
+    navigate('/login')
+  }
+  const handleLogout = () => {
+    // navigate('/')
+  }
+  const handleSignup = () => {
+    navigate('/signup')
+  }
   return (
     <HeaderContainer>
-      <LogoImage src={Logo} alt='JAM Logo' />
+      <NavLink to={'/'}><LogoImage src={Logo} alt='JAM Logo' /></NavLink>
       <SearchBar>
         <SearchInput
           type='text'
@@ -16,11 +29,19 @@ const Header = ({searchKey, setSearchKey}) => {
           onChange={e => {
             setSearchKey(e.target.value)
           }}
+          placeholder='Search Musics'
         />
         <SearchButton onClick={handleClick} src="https://www.transparentpng.com/thumb/search-button/XwzcnM-search-icon-square-find-button-hd-image.png" alt="Search" />
       </SearchBar>
       <div>
-        <button>Login</button>
+        {currentLogin ?
+          <button onClick={handleLogout}>Logout</button>
+          :
+          <>
+            <button onClick={handleLogin}>Login</button>
+            <button onClick={handleSignup}>Signup</button>
+          </>
+        }
       </div>
     </HeaderContainer>
   )
