@@ -4,6 +4,9 @@ import Logo from '../assets/logo.jpeg'
 
 const Header = () => {
   const [searchKey, setSearchKey] = useState('')
+  const handleClick = () => {
+    console.log({searchKey})
+  }
   return (
     <HeaderContainer>
       <LogoImage src={Logo} alt='JAM Logo' />
@@ -15,6 +18,7 @@ const Header = () => {
             setSearchKey(e.target.value)
           }}
         />
+        <SearchButton onClick={handleClick} src="https://www.transparentpng.com/thumb/search-button/XwzcnM-search-icon-square-find-button-hd-image.png" alt="Search" />
       </SearchBar>
       <div>
         <button>Login</button>
@@ -34,10 +38,20 @@ const LogoImage = styled.img`
   height: 40px;
 `
 const SearchBar = styled.div`
+  display: flex;
   width: 50%;
   border: cdcdcd;
-  border-radius: 25%;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  padding: 4px 8px;
 `
 const SearchInput = styled.input`
   width: 100%;
+  border: none;
+  &:focus-visible {
+    border: none;
+  }
+`
+const SearchButton = styled.img`
+  width: 30px;
 `
