@@ -2,10 +2,10 @@ import { useState } from "react"
 import { useNavigate, NavLink } from "react-router-dom"
 import styled from "styled-components"
 import Logo from '../assets/logo.jpeg'
-import { getCurrentUser } from '../apis/auth'
+import * as Auth from '../apis/auth'
 
 const Header = ({searchKey, setSearchKey}) => {
-  const currentLogin = getCurrentUser()
+  const currentLogin = Auth.getCurrentUser()
   const navigate = useNavigate()
   const handleClick = () => {
     console.log({searchKey})
@@ -14,7 +14,8 @@ const Header = ({searchKey, setSearchKey}) => {
     navigate('/login')
   }
   const handleLogout = () => {
-    // navigate('/')
+    Auth.logout()
+    navigate('/')
   }
   const handleSignup = () => {
     navigate('/signup')
