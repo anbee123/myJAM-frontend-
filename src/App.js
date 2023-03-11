@@ -4,11 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './components/Home'
 import LoginPage from './components/Login'
 import SignupPage from './components/Signup'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import * as Auth from './apis/auth'
 import Header from './components/Header';
 
 function App() {
+  const [searchKey, setSearchKey] = useState('')
   useEffect(() => {
     const testAPI = async () => {
       try {
@@ -22,7 +23,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <Header />
+      <Header searchKey={searchKey} setSearchKey={setSearchKey} />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />

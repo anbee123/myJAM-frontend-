@@ -2,8 +2,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import Logo from '../assets/logo.jpeg'
 
-const Header = () => {
-  const [searchKey, setSearchKey] = useState('')
+const Header = ({searchKey, setSearchKey}) => {
   const handleClick = () => {
     console.log({searchKey})
   }
@@ -33,6 +32,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #cdcdcd;
+  padding: 1rem;
 `
 const LogoImage = styled.img`
   height: 40px;
@@ -47,6 +47,7 @@ const SearchBar = styled.div`
 `
 const SearchInput = styled.input`
   width: 100%;
+  min-width: 100px;
   border: none;
   &:focus-visible {
     border: none;
@@ -54,4 +55,5 @@ const SearchInput = styled.input`
 `
 const SearchButton = styled.img`
   width: 30px;
+  margin-left: 8px;
 `

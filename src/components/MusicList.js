@@ -7,7 +7,7 @@ const MusicList = ({musics}) => {
       <h2>This is music list</h2>
       <ListContainer>
         {musics.map(item => (
-          <MusicCard musicItem={item} />
+          <MusicCard key={item.id} musicItem={item} />
         ))}
       </ListContainer>
     </div>
