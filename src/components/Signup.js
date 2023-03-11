@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import * as Auth from '../apis/auth'
+import { useNavigate } from "react-router-dom"
 
 const Signup = () => {
+  const navigate = useNavigate()
   const [errorText, setErrorText] = useState()
 
   const handleSignup = async (e) => {
@@ -26,6 +28,9 @@ const Signup = () => {
     try {
       const newUser = await Auth.signup({username, email, password})
       console.log({newUser})
+      if (newUser.token) {
+        navigate('/')
+      }
     } catch {
       return
     }
@@ -49,7 +54,7 @@ const Signup = () => {
         <div>
           {errorText}
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Signup</button>
       </form>
     </div>
   )

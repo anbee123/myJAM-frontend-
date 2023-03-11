@@ -9,6 +9,7 @@ export const testApi = async () => {
 
 export const signup = async ({username, email, password}) => {
   const res = await axios.post(API_URL + '/auth/signup', {username, email, password})
+  if (res.data.token) localStorage.setItem("user", JSON.stringify(res.data))
   return res.data
 }
 
