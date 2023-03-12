@@ -2,9 +2,11 @@ import { useState } from 'react'
 import * as Auth from '../apis/auth'
 import { useNavigate } from 'react-router-dom'
 import styled from "styled-components"
+import { useAuth } from '../context/auth'
 
 const Login = () => {
   const navigate = useNavigate()
+  const { user, setUser } = useAuth()
 
   const [errorText, setErrorText] = useState()
   const handleLogin = async (e) => {
