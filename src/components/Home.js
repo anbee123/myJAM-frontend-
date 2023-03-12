@@ -7,7 +7,7 @@ import { useAppContext } from '../context'
 
 const Home = () => {
   const [ genre, setGenre ] = useState(genreListData[0].key)
-  const { searchKey, musics, setMusics } = useAppContext()
+  const { user, searchKey, musics, setMusics } = useAppContext()
   const filteredMusics = musics.filter(item => {
     if (!searchKey) return true
     return item && item.title.toLowerCase().indexOf(searchKey.toLowerCase()) > -1
@@ -17,14 +17,14 @@ const Home = () => {
     const testAPI = async () => {
       try {
         const res = await MusicApi.fetchMusicDataByGenre({genre})
-        if (res.length > 0) setMusics(res)
+        if (res.length > 0) setMusics(user? res : res.slice(0, 4))
         console.log({res})
       } catch (err) {
         console.log('error: ', {err})
       }
     }
     testAPI()
-  }, [genre])
+  }, [genre, setMusics, user])
 
   return (
     <div>
