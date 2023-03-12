@@ -42,15 +42,15 @@ const Signup = () => {
       <InputGroupContainer onSubmit={handleSignup}>
         <InputGroup>
           <label htmlFor="username">User Name</label>
-          <input type='text' name="username" placeholder="User Name" />
+          <InputField type='text' name="username" placeholder="User Name" />
         </InputGroup>
         <InputGroup>
           <label htmlFor="email">Email</label>
-          <input type='email' name="email" placeholder="Email" />
+          <InputField type='email' name="email" placeholder="Email" />
         </InputGroup>
         <InputGroup>
           <label htmlFor="password">Password</label>
-          <input type='password' name="password" placeholder="Password" />
+          <InputField type='password' name="password" placeholder="Password" />
         </InputGroup>
         <div>
           {errorText}
