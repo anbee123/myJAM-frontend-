@@ -2,8 +2,10 @@ import { useNavigate, NavLink } from "react-router-dom"
 import styled from "styled-components"
 import Logo from '../assets/logo.jpeg'
 import * as Auth from '../apis/auth'
+import { useAppContext } from "../context"
 
-const Header = ({searchKey, setSearchKey}) => {
+const Header = () => {
+  const { searchKey, setSearchKey } = useAppContext()
   const currentLogin = Auth.getCurrentUser()
   const navigate = useNavigate()
   const handleClick = () => {

@@ -8,13 +8,12 @@ import Header from './components/Header';
 import { AppContextProvider } from './context';
 
 function App() {
-  const [searchKey, setSearchKey] = useState('')
   return (
     <AppContextProvider>
     <div className="App">
-      <Header searchKey={searchKey} setSearchKey={setSearchKey} />
+      <Header />
       <Routes>
-        <Route path='/' element={<HomePage searchKey={searchKey} />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignupPage />} />
       </Routes>

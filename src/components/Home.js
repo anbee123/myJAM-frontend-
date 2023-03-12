@@ -5,7 +5,7 @@ import MusicList from './MusicList'
 import CategoryList from './CategoryList'
 import { genreListData } from './CategoryList'
 
-const Home = ({searchKey}) => {
+const Home = () => {
   const [genre, setGenre] = useState(genreListData[0].key)
   const [musics, setMusics] = useState([])
 
