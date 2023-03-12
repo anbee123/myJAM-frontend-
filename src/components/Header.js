@@ -71,9 +71,7 @@ const SearchInput = styled.input`
   width: 100%;
   min-width: 100px;
   border: none;
-  &:focus-visible {
-    border: none;
-  }
+  outline: none;
 `
 const SearchButton = styled.img`
   width: 30px;
