@@ -16,10 +16,10 @@ export default MusicCard
 const CardContainer = styled(Link)`
   display: flex;
   flex-direction: column;
-  width: 19%;
+  width: 16%;
   min-width: 200px;
   padding: 0.5rem;
-  margin: 0.2rem;
+  margin: 0.5rem;
   border: 1px solid rgba(0,0,0,0.2);
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.4);
