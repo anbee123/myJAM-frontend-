@@ -1,8 +1,9 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const MusicCard = ({musicItem}) => {
   return (
-    <CardContainer>
+    <CardContainer to={`/item/${musicItem.id}`}>
       <ItemImage src={musicItem.thumb} alt={musicItem.title} />
       <h5>{musicItem.title}</h5>
     </CardContainer>
@@ -10,7 +11,7 @@ const MusicCard = ({musicItem}) => {
 }
 export default MusicCard
 
-const CardContainer = styled.div`
+const CardContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   width: 19%;

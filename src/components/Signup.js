@@ -11,9 +11,6 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault()
-    console.log(e.target.email.value)
-    console.log(e.target.password.value)
-    console.log(e.target.username.value)
     const email = e.target.email.value
     const password = e.target.password.value
     const username = e.target.username.value

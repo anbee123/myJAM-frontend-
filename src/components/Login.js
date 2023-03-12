@@ -12,8 +12,6 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log(e.target.username.value)
-    console.log(e.target.password.value)
     const username = e.target.username.value
     const password = e.target.password.value
     if (!username) {
