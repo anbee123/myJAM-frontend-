@@ -31,6 +31,7 @@ const Header = () => {
   }
   return (
     <HeaderContainer>
+      <Container>
       <NavLink to={'/'}><LogoImage src={Logo} alt='JAM Logo' /></NavLink>
       <SearchBar>
         <SearchInput
@@ -53,17 +54,23 @@ const Header = () => {
           </>
         }
       </ButtonContainer>
+      </Container>
     </HeaderContainer>
   )
 }
 export default Header
 
 const HeaderContainer = styled.div`
+  border-bottom: 2px solid #cdcdcd;
+`
+const Container = styled.div`
+  width: 80%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #cdcdcd;
   padding: 1rem;
+  
 `
 const LogoImage = styled.img`
   height: 50px;
