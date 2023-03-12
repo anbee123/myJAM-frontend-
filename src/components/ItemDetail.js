@@ -20,7 +20,13 @@ const ItemDetail = () => {
         <ReactAudioPlayer src={musicItem.stream_url} controls />
       </ItemImage>
       <Details>
-        {musicItem.title}
+        <h2>{musicItem.title}</h2>
+        <DetailText>
+          <p><b>Genre</b> : {musicItem.genre}</p>
+          <p><b>Duration</b> : {musicItem.duration}</p>
+          <p><b>Release Date</b> : {musicItem.release_date}</p>
+        </DetailText>
+        <p>{musicItem.description}</p>
       </Details>
     </ItemDetailContainer>
   )
@@ -53,4 +59,10 @@ const Image = styled.img`
 const Details = styled.div`
   display: flex;
   flex-direction: column;
+`
+const DetailText = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
 `
