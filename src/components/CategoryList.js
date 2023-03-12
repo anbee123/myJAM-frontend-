@@ -16,7 +16,7 @@ export const genreListData = [
   {key: 'ambient', title: 'Ambient', image: Image2},
   {key: 'blues', title: 'Blues', image: Image3},
   {key: 'classical', title: 'Classical', image: Image4},
-  {key: 'breakbeat', title: 'Breakbeat', image: Image5},
+  {key: 'pop', title: 'Pop', image: Image5},
   {key: 'chillout', title: 'Chillout', image: Image6},
   {key: 'disco', title: 'Disco', image: Image7},
   {key: 'drumandbass', title: 'Drum & bass', image: Image8},
@@ -28,7 +28,7 @@ const CategoryList = ({setGenre}) => {
   const { user } = useAppContext()
   return (
     <CategoryContainer>
-      <TitleBar> <h2>{user ? 'Welcome to JAM' : 'Login for more Genres!'}</h2> </TitleBar>
+      <TitleBar> <h2>{user ? 'Welcome to myJAM' : 'Login for more Genres!'}</h2> </TitleBar>
       <GenreList>
         {(user ? genreListData : genreListData.slice(0, 5)).map(item => (
           <GenreItem key={item.key} onClick={() => setGenre(item.key)}>

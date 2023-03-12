@@ -4,7 +4,9 @@
   background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
   background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
   min-height: 100vh;
+
 }
+
 
 @keyframes animated-gradient{
   to{

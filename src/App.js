@@ -10,15 +10,15 @@ import ItemDetail from './components/ItemDetail';
 function App() {
   return (
     <AppContextProvider>
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/item/:itemId' element={<ItemDetail />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/signup' element={<SignupPage />} />
-      </Routes>
-    </div>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/item/:itemId' element={<ItemDetail />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/signup' element={<SignupPage />} />
+        </Routes>
+      </div>
     </AppContextProvider>
   );
 }

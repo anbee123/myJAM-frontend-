@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { useAppContext } from "../context"
 import ReactAudioPlayer from 'react-audio-player'
 
+
 const ItemDetail = () => {
   const { itemId } = useParams()
   console.log({itemId})
