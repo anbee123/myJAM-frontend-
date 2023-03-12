@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom"
+import styled from "styled-components"
 import { useAppContext } from "../context"
 
 const ItemDetail = () => {
@@ -9,10 +10,19 @@ const ItemDetail = () => {
   const musicItem = musics.find(item => item.id === itemId)
   console.log({musicItem})
 
+  if (!musicItem) return null
+
   return (
-    <div>
-      Item detail
-    </div>
+    <ItemDetailContainer>
+      {musicItem.title}
+    </ItemDetailContainer>
   )
 }
 export default ItemDetail
+
+const ItemDetailContainer = styled.div`
+  width: 80%;
+  margin: auto;
+  display: flex;
+  margin-top: 2rem;
+`
