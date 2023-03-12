@@ -3,8 +3,8 @@ import styled from "styled-components"
 const MusicCard = ({musicItem}) => {
   return (
     <CardContainer>
-      {/* <img src={musicItem.thumb} alt={musicItem.title} /> */}
-      {musicItem.title}
+      <ItemImage src={musicItem.thumb} alt={musicItem.title} />
+      <h5>{musicItem.title}</h5>
     </CardContainer>
   )
 }
@@ -19,4 +19,10 @@ const CardContainer = styled.div`
   margin: 0.2rem;
   border: 1px solid rgba(0,0,0,0.2);
   border-radius: 0.5rem;
+  h5 {
+    margin: 0;
+  }
+`
+const ItemImage = styled.img`
+  margin-bottom: 0.5rem;
 `

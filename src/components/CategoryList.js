@@ -55,7 +55,7 @@ const TitleBar = styled.div`
 `
 const GenreList = styled.div`
   position: relative;
-  bottom: 50px;
+  bottom: 35px;
   display: flex;
   margin: 0 3rem;
   justify-content: space-around;
