@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
 import { useAppContext } from "../context"
+import ReactAudioPlayer from 'react-audio-player'
 
 const ItemDetail = () => {
   const { itemId } = useParams()
@@ -15,6 +16,7 @@ const ItemDetail = () => {
   return (
     <ItemDetailContainer>
       {musicItem.title}
+      <ReactAudioPlayer src={musicItem.stream_url} autoPlay controls />
     </ItemDetailContainer>
   )
 }
