@@ -9,18 +9,19 @@ import Image6 from '../assets/images/m6.png'
 import Image7 from '../assets/images/m7.png'
 import Image8 from '../assets/images/m8.png'
 import Image9 from '../assets/images/m9.png'
+import Image10 from '../assets/images/m10.png'
 
 export const genreListData = [
   {key: 'acoustic', title: 'Acoustic', image: Image1},
   {key: 'ambient', title: 'Ambient', image: Image2},
-  {key: 'blues', title: 'Blues', image: Image2},
-  {key: 'classical', title: 'Classical', image: Image3},
-  {key: 'breakbeat', title: 'Breakbeat', image: Image4},
-  {key: 'chillout', title: 'Chillout', image: Image5},
-  {key: 'disco', title: 'Disco', image: Image6},
-  {key: 'drumandbass', title: 'Drum & bass', image: Image7},
-  {key: 'downtempo', title: 'Downtempo', image: Image8},
-  {key: 'other', title: 'Other', image: Image9},
+  {key: 'blues', title: 'Blues', image: Image3},
+  {key: 'classical', title: 'Classical', image: Image4},
+  {key: 'breakbeat', title: 'Breakbeat', image: Image5},
+  {key: 'chillout', title: 'Chillout', image: Image6},
+  {key: 'disco', title: 'Disco', image: Image7},
+  {key: 'drumandbass', title: 'Drum & bass', image: Image8},
+  {key: 'downtempo', title: 'Downtempo', image: Image9},
+  {key: 'other', title: 'Other', image: Image10},
 ]
 
 const CategoryList = ({setGenre}) => {
@@ -47,7 +48,7 @@ const CategoryContainer = styled.div`
 `
 const TitleBar = styled.div`
   background-color: bisque;
-  height: 150px;
+  height: 100px;
   h2 {
     margin: 0;
     padding: 1rem 0;
