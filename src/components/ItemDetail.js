@@ -13,6 +13,11 @@ const ItemDetail = () => {
 
   if (!musicItem) return null
 
+  const formateTime = (sec) => {
+    const date = new Date(0)
+    date.setSeconds(sec)
+    return date.toISOString().substring(11, 19)
+  }
   return (
     <ItemDetailContainer>
       <ItemImage>
@@ -23,7 +28,7 @@ const ItemDetail = () => {
         <h2>{musicItem.title}</h2>
         <DetailText>
           <p><b>Genre</b> : {musicItem.genre}</p>
-          <p><b>Duration</b> : {musicItem.duration}</p>
+          <p><b>Duration</b> : {formateTime(musicItem.duration)}</p>
           <p><b>Release Date</b> : {musicItem.release_date}</p>
         </DetailText>
         <p>{musicItem.description}</p>
