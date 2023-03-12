@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  background: #A770EF;
+  background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+  background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+}
+
+@keyframes animated-gradient{
+  to{
+    background-position: 200%;
+  }
 }
 
 .App-logo {

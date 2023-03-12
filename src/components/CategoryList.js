@@ -47,11 +47,25 @@ const CategoryContainer = styled.div`
 `
 const TitleBar = styled.div`
   background-color: bisque;
-  height: 100px;
+  height: 135px;
   h2 {
     margin: 0;
     padding: 1rem 0;
+    font-size: 60px;
+    font-weight: 600;
+    color: transparent;
+    background-image: linear-gradient(to right ,#553c9a, #ee4b2b, #00c2cb, #ff7f50, #553c9a);
+    -webkit-background-clip: text;
+    background-clip: text;    
+    background-size: 200%;
+    background-position: -200%;
+    animation: animated-gradient 2s infinite alternate-reverse;
   }
+  &:after {
+    content: 'qwq'
+    box-shadow: inset (-40px) (-40px) 40px (-40px);
+  }
+}
 `
 const GenreList = styled.div`
   position: relative;
