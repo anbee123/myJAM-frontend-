@@ -21,12 +21,13 @@ const CardContainer = styled(Link)`
   padding: 0.5rem;
   margin: 0.2rem;
   border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background: rgba(255, 255, 255, 0.4);
   h5 {
     margin: 0;
   }
 `
 const ItemImage = styled.img`
+  border-radius: 1rem;
   margin-bottom: 0.5rem;
 `
