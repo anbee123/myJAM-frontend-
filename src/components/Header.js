@@ -34,16 +34,16 @@ const Header = ({searchKey, setSearchKey}) => {
         />
         <SearchButton onClick={handleClick} src="https://www.transparentpng.com/thumb/search-button/XwzcnM-search-icon-square-find-button-hd-image.png" alt="Search" />
       </SearchBar>
-      <div>
+      <ButtonContainer>
         {currentLogin ?
-          <button onClick={handleLogout}>Logout</button>
+          <AuthButton onClick={handleLogout}>Logout</AuthButton>
           :
           <>
-            <button onClick={handleLogin}>Login</button>
-            <button onClick={handleSignup}>Signup</button>
+            <AuthButton onClick={handleLogin}>Login</AuthButton>
+            <AuthButton onClick={handleSignup}>Signup</AuthButton>
           </>
         }
-      </div>
+      </ButtonContainer>
     </HeaderContainer>
   )
 }
@@ -78,4 +78,14 @@ const SearchInput = styled.input`
 const SearchButton = styled.img`
   width: 30px;
   margin-left: 8px;
+`
+const ButtonContainer = styled.div`
+  display: flex;
+`
+const AuthButton = styled.div`
+  background-color: initial;
+  border: none;
+  font-size: 20px;
+  margin: 0.5rem;
+  cursor: pointer;
 `
