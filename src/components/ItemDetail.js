@@ -15,8 +15,13 @@ const ItemDetail = () => {
 
   return (
     <ItemDetailContainer>
-      {musicItem.title}
-      <ReactAudioPlayer src={musicItem.stream_url} autoPlay controls />
+      <ItemImage>
+        <Image src={musicItem.thumb} alt={musicItem.title} />
+        <ReactAudioPlayer src={musicItem.stream_url} controls />
+      </ItemImage>
+      <Details>
+        {musicItem.title}
+      </Details>
     </ItemDetailContainer>
   )
 }
@@ -27,4 +32,25 @@ const ItemDetailContainer = styled.div`
   margin: auto;
   display: flex;
   margin-top: 2rem;
+`
+const ItemImage = styled.div`
+  width: 40%;
+  min-width: 320px;
+  margin-right: 3rem;
+  border-radius: 20px;
+  border: 2px solid #525252;
+  padding: 0.5rem;
+  background-color: #d5d5d5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const Image = styled.img`
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+`
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
 `
