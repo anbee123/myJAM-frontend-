@@ -7,8 +7,7 @@ import { useAppContext } from '../context'
 
 const Home = () => {
   const [ genre, setGenre ] = useState(genreListData[0].key)
-  const [ musics, setMusics ] = useState([])
-  const { searchKey } = useAppContext()
+  const { searchKey, musics, setMusics } = useAppContext()
   const filteredMusics = musics.filter(item => {
     if (!searchKey) return true
     return item && item.title.toLowerCase().indexOf(searchKey.toLowerCase()) > -1
@@ -21,7 +20,7 @@ const Home = () => {
         if (res.length > 0) setMusics(res)
         console.log({res})
       } catch (err) {
-        console.log('error: ', err.response.data)
+        console.log('error: ', {err})
       }
     }
     testAPI()
