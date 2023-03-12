@@ -17,7 +17,7 @@ const Home = () => {
     const testAPI = async () => {
       try {
         const res = await MusicApi.fetchMusicDataByGenre({genre})
-        if (res.length > 0) setMusics(user? res : res.slice(0, 4))
+        if (res.length > 0) setMusics(user? res : res.slice(0, 5))
         console.log({res})
       } catch (err) {
         console.log('error: ', {err})
