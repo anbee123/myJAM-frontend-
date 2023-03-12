@@ -42,10 +42,11 @@ const ItemDetailContainer = styled.div`
   width: 80%;
   margin: auto;
   display: flex;
-  margin-top: 2rem;
+  padding: 2rem;
 `
 const ItemImage = styled.div`
   width: 40%;
+  height: fit-content;
   min-width: 320px;
   margin-right: 3rem;
   border-radius: 20px;
