@@ -11,7 +11,7 @@ const Home = () => {
   const { searchKey } = useAppContext()
   const filteredMusics = musics.filter(item => {
     if (!searchKey) return true
-    return item && item.title.includes(searchKey)
+    return item && item.title.toLowerCase().indexOf(searchKey.toLowerCase()) > -1
   })
 
   useEffect(() => {
