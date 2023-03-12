@@ -46,7 +46,7 @@ export default CategoryList
 const CategoryContainer = styled.div`
 `
 const TitleBar = styled.div`
-  background-color: bisque;
+  background-color: rgba(250, 250, 250, 0.3);
   height: 135px;
   h2 {
     margin: 0;
