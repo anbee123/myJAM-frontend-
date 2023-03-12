@@ -9,6 +9,7 @@ const Login = () => {
   const [errorText, setErrorText] = useState()
   const handleLogin = async (e) => {
     e.preventDefault()
+    e.stopPropagation()
     console.log(e.target.username.value)
     console.log(e.target.password.value)
     const username = e.target.username.value
@@ -51,7 +52,7 @@ const Login = () => {
 }
 export default Login
 
-const AuthContainer = styled.form`
+const AuthContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 350px;
@@ -73,7 +74,7 @@ const InputGroup = styled.div`
     font-size: 20px;
   }
   label {
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
   }
 `
 const InputField = styled.input`
@@ -81,11 +82,10 @@ const InputField = styled.input`
   outline: none;
   border-radius: 10px;
   padding: 0.5rem;
-  &:focus-visible {
-  }
+  font-size: 20px;
 }
 `
-const InputGroupContainer = styled.div`
+const InputGroupContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start

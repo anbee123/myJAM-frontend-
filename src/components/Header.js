@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useNavigate, NavLink } from "react-router-dom"
 import styled from "styled-components"
 import Logo from '../assets/logo.jpeg'
@@ -72,9 +71,11 @@ const SearchInput = styled.input`
   min-width: 100px;
   border: none;
   outline: none;
+  font-size: 16px;
 `
 const SearchButton = styled.img`
   width: 30px;
+  height: 30px;
   margin-left: 8px;
 `
 const ButtonContainer = styled.div`
