@@ -4,7 +4,6 @@ import MusicCard from "./MusicItem"
 const MusicList = ({musics}) => {
   return (
     <div>
-      <h2>This is music list</h2>
       <ListContainer>
         {musics.map(item => (
           <MusicCard key={item.id} musicItem={item} />
