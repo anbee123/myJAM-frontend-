@@ -59,7 +59,7 @@ const TitleBar = styled.div`
     background-clip: text;    
     background-size: 200%;
     background-position: -200%;
-    animation: animated-gradient 2s infinite alternate-reverse;
+    animation: animated-gradient 3s infinite alternate-reverse;
   }
   &:after {
     content: 'qwq'

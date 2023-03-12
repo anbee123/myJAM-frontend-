@@ -1,6 +1,6 @@
 import { useNavigate, NavLink } from "react-router-dom"
 import styled from "styled-components"
-import Logo from '../assets/logo.jpeg'
+import Logo from '../assets/jamLogo.png'
 import * as Auth from '../apis/auth'
 import { useAppContext } from "../context"
 import { useEffect } from "react"
@@ -66,7 +66,7 @@ const HeaderContainer = styled.div`
   padding: 1rem;
 `
 const LogoImage = styled.img`
-  height: 40px;
+  height: 50px;
 `
 const SearchBar = styled.div`
   display: flex;
@@ -82,6 +82,7 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
   font-size: 16px;
+  background-color: transparent;
 `
 const SearchButton = styled.img`
   width: 30px;
