@@ -7,8 +7,14 @@ export const fetchMusicData = async () => {
   return res.data
 }
 
-export const searchMusic = async (searchKey, page, count=10) => {
+export const searchMusic = async ({searchKey, page, count=10}) => {
   const API_URL = `https://api-v2.hearthis.at/search?t=${searchKey}&page=${page}&count=${count}`
+  const res = await axios.get(API_URL)
+  return res.data
+}
+
+export const fetchMusicDataByGenre = async ({genre='other', page=0, count=10}) => {
+  const API_URL = `https://api-v2.hearthis.at/categories/${genre}/?page=${page}&count=${count}`
   const res = await axios.get(API_URL)
   return res.data
 }
