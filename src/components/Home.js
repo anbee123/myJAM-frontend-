@@ -3,7 +3,7 @@ import * as MusicApi from '../apis/music'
 import { useEffect, useState } from 'react'
 import MusicList from './MusicList'
 
-const Home = () => {
+const Home = ({searchKey}) => {
   const currentUser = Auth.getCurrentUser()
   const [musics, setMusics] = useState([])
   console.log({currentUser})
