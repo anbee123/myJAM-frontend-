@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './components/Home'
 import LoginPage from './components/Login'
 import SignupPage from './components/Signup'
-import { useState } from 'react';
 import Header from './components/Header';
 import { AppContextProvider } from './context';
 

@@ -1,13 +1,18 @@
-import * as Auth from '../apis/auth'
 import * as MusicApi from '../apis/music'
 import { useEffect, useState } from 'react'
 import MusicList from './MusicList'
 import CategoryList from './CategoryList'
 import { genreListData } from './CategoryList'
+import { useAppContext } from '../context'
 
 const Home = () => {
   const [genre, setGenre] = useState(genreListData[0].key)
   const [musics, setMusics] = useState([])
+  const { searchKey } = useAppContext()
+  const filteredMusics = musics.filter(item => {
+    if (!searchKey) return true
+    return item && item.title.includes(searchKey)
+  })
 
   useEffect(() => {
     const testAPI = async () => {
@@ -25,7 +30,7 @@ const Home = () => {
   return (
     <div>
       <CategoryList setGenre={setGenre} />
-      <MusicList musics={musics} />
+      <MusicList musics={filteredMusics} />
     </div>
   )
 }
