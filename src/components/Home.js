@@ -2,6 +2,7 @@ import * as Auth from '../apis/auth'
 import * as MusicApi from '../apis/music'
 import { useEffect, useState } from 'react'
 import MusicList from './MusicList'
+import CategoryList from './CategoryList'
 
 const Home = ({searchKey}) => {
   const currentUser = Auth.getCurrentUser()
@@ -23,8 +24,7 @@ const Home = ({searchKey}) => {
 
   return (
     <div>
-      this is Home Page
-      Logged in
+      <CategoryList />
       <MusicList musics={musics} />
     </div>
   )
