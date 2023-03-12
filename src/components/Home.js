@@ -6,10 +6,8 @@ import CategoryList from './CategoryList'
 import { genreListData } from './CategoryList'
 
 const Home = ({searchKey}) => {
-  const currentUser = Auth.getCurrentUser()
   const [genre, setGenre] = useState(genreListData[0].key)
   const [musics, setMusics] = useState([])
-  console.log({currentUser})
 
   useEffect(() => {
     const testAPI = async () => {

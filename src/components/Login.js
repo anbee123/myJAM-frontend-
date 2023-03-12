@@ -2,11 +2,11 @@ import { useState } from 'react'
 import * as Auth from '../apis/auth'
 import { useNavigate } from 'react-router-dom'
 import styled from "styled-components"
-import { useAuth } from '../context/auth'
+import { useAppContext } from '../context'
 
 const Login = () => {
   const navigate = useNavigate()
-  const { user, setUser } = useAuth()
+  const { setUser } = useAppContext()
 
   const [errorText, setErrorText] = useState()
   const handleLogin = async (e) => {
@@ -26,7 +26,9 @@ const Login = () => {
 
     try {
       const user = await Auth.login({username, password})
+      if (!user) return
       console.log({user})
+      setUser(user)
       navigate('/')
     } catch (err) {
       return

@@ -2,8 +2,10 @@ import { useState } from 'react'
 import * as Auth from '../apis/auth'
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
+import { useAppContext } from '../context'
 
 const Signup = () => {
+  const { setUser } = useAppContext()
   const navigate = useNavigate()
   const [errorText, setErrorText] = useState()
 
@@ -28,10 +30,10 @@ const Signup = () => {
 
     try {
       const newUser = await Auth.signup({username, email, password})
+      if (!newUser.token) return
       console.log({newUser})
-      if (newUser.token) {
-        navigate('/')
-      }
+      setUser(newUser)
+      navigate('/')
     } catch {
       return
     }

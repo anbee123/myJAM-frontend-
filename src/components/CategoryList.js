@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import * as Auth from '../apis/auth'
 import Image1 from '../assets/images/m1.png'
 import Image2 from '../assets/images/m2.png'
 import Image3 from '../assets/images/m3.png'
@@ -10,6 +9,7 @@ import Image7 from '../assets/images/m7.png'
 import Image8 from '../assets/images/m8.png'
 import Image9 from '../assets/images/m9.png'
 import Image10 from '../assets/images/m10.png'
+import { useAppContext } from "../context"
 
 export const genreListData = [
   {key: 'acoustic', title: 'Acoustic', image: Image1},
@@ -25,11 +25,11 @@ export const genreListData = [
 ]
 
 const CategoryList = ({setGenre}) => {
-  const currentUser = Auth.getCurrentUser()
+  const { user } = useAppContext()
   console.log({genreListData})
   return (
     <CategoryContainer>
-      <TitleBar> <h2>{currentUser ? 'Welcome to JAM' : 'Login for more Genres!'}</h2> </TitleBar>
+      <TitleBar> <h2>{user ? 'Welcome to JAM' : 'Login for more Genres!'}</h2> </TitleBar>
       <GenreList>
         {genreListData.map(item => (
           <GenreItem key={item.key} onClick={() => setGenre(item.key)}>

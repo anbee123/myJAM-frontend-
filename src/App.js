@@ -5,12 +5,12 @@ import LoginPage from './components/Login'
 import SignupPage from './components/Signup'
 import { useState } from 'react';
 import Header from './components/Header';
-import { AuthProvider } from './context/auth';
+import { AppContextProvider } from './context';
 
 function App() {
   const [searchKey, setSearchKey] = useState('')
   return (
-    <AuthProvider>
+    <AppContextProvider>
     <div className="App">
       <Header searchKey={searchKey} setSearchKey={setSearchKey} />
       <Routes>
@@ -19,7 +19,7 @@ function App() {
         <Route path='/signup' element={<SignupPage />} />
       </Routes>
     </div>
-    </AuthProvider>
+    </AppContextProvider>
   );
 }
 
