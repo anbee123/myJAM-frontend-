@@ -44,7 +44,7 @@ const Login = () => {
         <div>
           {errorText}
         </div>
-        <button type="submit">Login</button>
+        <SubmitButton type="submit">Login</SubmitButton>
       </InputGroupContainer>
     </AuthContainer>
   )
@@ -54,7 +54,7 @@ export default Login
 const AuthContainer = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 350px;
   margin: 3rem auto auto;
   background-color: #f7f7f7;
   padding: 20px 25px 30px;
@@ -89,4 +89,21 @@ const InputGroupContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start
+`
+const SubmitButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 50px;
+  width: 100%;
 `
