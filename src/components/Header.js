@@ -3,10 +3,17 @@ import styled from "styled-components"
 import Logo from '../assets/logo.jpeg'
 import * as Auth from '../apis/auth'
 import { useAppContext } from "../context"
+import { useEffect } from "react"
 
 const Header = () => {
   const { setUser, searchKey, setSearchKey } = useAppContext()
   const currentLogin = Auth.getCurrentUser()
+  useEffect(() => {
+    console.log({currentLogin})
+    if (!currentLogin) setUser(undefined)
+    setUser(currentLogin)
+  }, [])
+
   const navigate = useNavigate()
   const handleClick = () => {
     console.log({searchKey})

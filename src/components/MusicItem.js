@@ -1,9 +1,11 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useAppContext } from "../context"
 
 const MusicCard = ({musicItem}) => {
+  const { user } = useAppContext()
   return (
-    <CardContainer to={`/item/${musicItem.id}`}>
+    <CardContainer to={user ? `/item/${musicItem.id}` : ''}>
       <ItemImage src={musicItem.thumb} alt={musicItem.title} />
       <h5>{musicItem.title}</h5>
     </CardContainer>

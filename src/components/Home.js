@@ -6,8 +6,8 @@ import { genreListData } from './CategoryList'
 import { useAppContext } from '../context'
 
 const Home = () => {
-  const [genre, setGenre] = useState(genreListData[0].key)
-  const [musics, setMusics] = useState([])
+  const [ genre, setGenre ] = useState(genreListData[0].key)
+  const [ musics, setMusics ] = useState([])
   const { searchKey } = useAppContext()
   const filteredMusics = musics.filter(item => {
     if (!searchKey) return true
