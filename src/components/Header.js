@@ -5,7 +5,7 @@ import * as Auth from '../apis/auth'
 import { useAppContext } from "../context"
 
 const Header = () => {
-  const { searchKey, setSearchKey } = useAppContext()
+  const { setUser, searchKey, setSearchKey } = useAppContext()
   const currentLogin = Auth.getCurrentUser()
   const navigate = useNavigate()
   const handleClick = () => {
@@ -16,6 +16,7 @@ const Header = () => {
   }
   const handleLogout = () => {
     Auth.logout()
+    setUser(undefined)
     navigate('/')
   }
   const handleSignup = () => {

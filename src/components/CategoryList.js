@@ -26,12 +26,12 @@ export const genreListData = [
 
 const CategoryList = ({setGenre}) => {
   const { user } = useAppContext()
-  console.log({genreListData})
+  console.log('CategoryList', {user})
   return (
     <CategoryContainer>
       <TitleBar> <h2>{user ? 'Welcome to JAM' : 'Login for more Genres!'}</h2> </TitleBar>
       <GenreList>
-        {genreListData.map(item => (
+        {(user ? genreListData : genreListData.slice(1, 5)).map(item => (
           <GenreItem key={item.key} onClick={() => setGenre(item.key)}>
             <img src={item.image} alt={item.title}/>
             {item.title}
