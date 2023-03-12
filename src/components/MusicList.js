@@ -5,8 +5,8 @@ const MusicList = ({musics}) => {
   return (
     <div>
       <ListContainer>
-        {musics.map(item => (
-          <MusicCard key={item.id} musicItem={item} />
+        {musics.map((item, index) => (
+          item && <MusicCard key={index} musicItem={item} />
         ))}
       </ListContainer>
     </div>

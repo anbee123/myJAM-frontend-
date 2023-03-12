@@ -10,7 +10,7 @@ import Image7 from '../assets/images/m7.png'
 import Image8 from '../assets/images/m8.png'
 import Image9 from '../assets/images/m9.png'
 
-const genreListData = [
+export const genreListData = [
   {key: 'acoustic', title: 'Acoustic', image: Image1},
   {key: 'ambient', title: 'Ambient', image: Image2},
   {key: 'blues', title: 'Blues', image: Image2},
@@ -23,7 +23,7 @@ const genreListData = [
   {key: 'other', title: 'Other', image: Image9},
 ]
 
-const CategoryList = () => {
+const CategoryList = ({setGenre}) => {
   const currentUser = Auth.getCurrentUser()
   console.log({genreListData})
   return (
@@ -31,7 +31,7 @@ const CategoryList = () => {
       <TitleBar> <h2>{currentUser ? 'Welcome to JAM' : 'Login for more Genres!'}</h2> </TitleBar>
       <GenreList>
         {genreListData.map(item => (
-          <GenreItem key={item.key}>
+          <GenreItem key={item.key} onClick={() => setGenre(item.key)}>
             <img src={item.image} alt={item.title}/>
             {item.title}
           </GenreItem>
@@ -67,6 +67,7 @@ const GenreItem = styled.div`
   width: 70px;
   overflow-wrap: break-word;
   align-items: center;
+  cursor: pointer;
   img {
     width: 50px;
     height: 50px;
