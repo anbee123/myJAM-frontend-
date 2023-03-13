@@ -30,7 +30,7 @@ const Header = () => {
     navigate('/signup')
   }
   return (
-    <HeaderContainer>
+    <div className="border-b-2 border-solid border-b-[#cdcdcd]">
       <Container>
       <NavLink to={'/'}><LogoImage src={Logo} alt='JAM Logo' /></NavLink>
       <SearchBar>
@@ -55,14 +55,11 @@ const Header = () => {
         }
       </ButtonContainer>
       </Container>
-    </HeaderContainer>
+    </div>
   )
 }
 export default Header
 
-const HeaderContainer = styled.div`
-  border-bottom: 2px solid #cdcdcd;
-`
 const Container = styled.div`
   width: 80%;
   margin: auto;
