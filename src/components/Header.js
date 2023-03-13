@@ -31,10 +31,11 @@ const Header = () => {
   }
   return (
     <div className="border-b-2 border-solid border-b-[#cdcdcd]">
-      <Container>
-      <NavLink to={'/'}><LogoImage src={Logo} alt='JAM Logo' /></NavLink>
-      <SearchBar>
-        <SearchInput
+      <div className="w-4/5 flex items-center justify-between m-auto p-4">
+      <NavLink to={'/'}><img className="h-12" src={Logo} alt='JAM Logo' /></NavLink>
+      <div className="flex w-6/12 border px-2 py-1 rounded-xl border-solid border-[#cdcdcd]">
+        <input
+          className="w-full min-w-[100px] text-base bg-transparent border-none"
           type='text'
           value={searchKey} 
           onChange={e => {
@@ -42,19 +43,19 @@ const Header = () => {
           }}
           placeholder='Search Musics'
         />
-        <SearchButton onClick={handleClick} src="https://www.transparentpng.com/thumb/search-button/XwzcnM-search-icon-square-find-button-hd-image.png" alt="Search" />
-      </SearchBar>
-      <ButtonContainer>
+        <img className="w-7 h-7 ml-2" onClick={handleClick} src="https://www.transparentpng.com/thumb/search-button/XwzcnM-search-icon-square-find-button-hd-image.png" alt="Search" />
+      </div>
+      <div className="flex">
         {currentLogin ?
-          <AuthButton onClick={handleLogout}>Logout</AuthButton>
+          <div className="text-xl cursor-pointer m-2 border-none" onClick={handleLogout}>Logout</div>
           :
           <>
-            <AuthButton onClick={handleLogin}>Login</AuthButton>
-            <AuthButton onClick={handleSignup}>Signup</AuthButton>
+            <div className="text-xl cursor-pointer m-2 border-none" onClick={handleLogin}>Login</div>
+            <div className="text-xl cursor-pointer m-2 border-none" onClick={handleSignup}>Signup</div>
           </>
         }
-      </ButtonContainer>
-      </Container>
+      </div>
+      </div>
     </div>
   )
 }
