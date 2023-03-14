@@ -1,4 +1,3 @@
-import styled from "styled-components"
 import Image1 from '../assets/images/m1.png'
 import Image2 from '../assets/images/m2.png'
 import Image3 from '../assets/images/m3.png'
@@ -27,64 +26,22 @@ export const genreListData = [
 const CategoryList = ({setGenre}) => {
   const { user } = useAppContext()
   return (
-    <CategoryContainer>
-      <TitleBar> <h2>{user ? 'Welcome to myJAM' : 'Login for more Genres!'}</h2> </TitleBar>
-      <GenreList>
+    <div>
+      <div className="bg-white/30 h-32">
+        <h2 className="m-0 px-0 py-4 text-6xl font-bold text-transparent bg-[linear-gradient(to_right,#553c9a,#ee4b2b,#00c2cb,#ff7f50,#553c9a)] bg-clip-text bg-[length:200%] bg-[-200%] animate-[animated-gradient_3s_infinite_alternate-reverse]">
+          {user ? 'Welcome to myJAM' : 'Login for more Genres!'}
+        </h2>
+      </div>
+      <div className="relative flex justify-around mx-12 my-0 bottom-9">
         {(user ? genreListData : genreListData.slice(0, 5)).map(item => (
-          <GenreItem key={item.key} onClick={() => setGenre(item.key)}>
-            <img src={item.image} alt={item.title}/>
+          <div className="flex flex-col w-20 break-words items-center cursor-pointer m-2" key={item.key} onClick={() => setGenre(item.key)}>
+            <img className="w-[50px] h-[50px] rounded-[50%]" src={item.image} alt={item.title}/>
             {item.title}
-          </GenreItem>
+          </div>
         ))}
-      </GenreList>
-    </CategoryContainer>
+      </div>
+    </div>
   )
 }
 
 export default CategoryList
-
-const CategoryContainer = styled.div`
-`
-const TitleBar = styled.div`
-  background-color: rgba(250, 250, 250, 0.3);
-  height: 135px;
-  h2 {
-    margin: 0;
-    padding: 1rem 0;
-    font-size: 60px;
-    font-weight: 600;
-    color: transparent;
-    background-image: linear-gradient(to right ,#553c9a, #ee4b2b, #00c2cb, #ff7f50, #553c9a);
-    -webkit-background-clip: text;
-    background-clip: text;    
-    background-size: 200%;
-    background-position: -200%;
-    animation: animated-gradient 3s infinite alternate-reverse;
-  }
-  &:after {
-    content: 'qwq'
-    box-shadow: inset (-40px) (-40px) 40px (-40px);
-  }
-}
-`
-const GenreList = styled.div`
-  position: relative;
-  bottom: 35px;
-  display: flex;
-  margin: 0 3rem;
-  justify-content: space-around;
-`
-const GenreItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem;
-  width: 70px;
-  overflow-wrap: break-word;
-  align-items: center;
-  cursor: pointer;
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-`
