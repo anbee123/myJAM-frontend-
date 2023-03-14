@@ -1,21 +1,14 @@
-import styled from "styled-components"
 import MusicCard from "./MusicItem"
 
 const MusicList = ({musics}) => {
   return (
     <div>
-      <ListContainer>
+      <div className="flex flex-wrap justify-center">
         {musics && musics.map((item, index) => (
           item && <MusicCard key={index} musicItem={item} />
         ))}
-      </ListContainer>
+      </div>
     </div>
   )
 }
 export default MusicList
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-`
