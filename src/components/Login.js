@@ -33,7 +33,7 @@ const Login = () => {
   }
   return (
     <div className='flex flex-col max-w-[350px] bg-neutral-200 border drop-shadow-2xl mt-12 mb-auto mx-auto pt-5 pb-7 px-6 rounded-sm border-solid border-black/20'>
-      <h1>Login</h1>
+      <h1 className='text-3xl font-bold my-6'>Login</h1>
       <form className='flex flex-col items-start' onSubmit={handleLogin}>
         <div className='flex flex-col w-full text-left text-xl mb-4'>
           <label className='mt-0 mb-4 mx-0' htmlFor="username">
