@@ -20,7 +20,7 @@ const ItemDetail = () => {
   }
   return (
     <div className="w-4/5 flex m-auto p-8">
-      <div className="w-2/5 h-fit min-w-[320px] border-neutral-600 bg-slate-300 flex flex-col items-center mr-12 p-2 rounded-3xl border-2 border-solid">
+      <div className="w-2/5 h-fit min-w-[320px] border-neutral-600 bg-neutral-300 flex flex-col items-center mr-12 p-2 rounded-3xl border-2 border-solid">
         <img className="w-full mb-2 rounded-3xl" src={musicItem.thumb} alt={musicItem.title} />
         <ReactAudioPlayer src={musicItem.stream_url} controls />
       </div>
