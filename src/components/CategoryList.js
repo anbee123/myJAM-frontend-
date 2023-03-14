@@ -28,7 +28,7 @@ const CategoryList = ({setGenre}) => {
   return (
     <div>
       <div className="bg-white/30 h-32">
-        <h2 className="m-0 px-0 py-4 text-6xl font-bold text-transparent bg-[linear-gradient(to_right,#553c9a,#ee4b2b,#00c2cb,#ff7f50,#553c9a)] bg-clip-text bg-[length:200%] bg-[-200%] animate-[animated-gradient_3s_infinite_alternate-reverse]">
+        <h2 className="m-0 px-0 py-4 text-6xl font-semibold text-transparent bg-[linear-gradient(to_right,#553c9a,#ee4b2b,#00c2cb,#ff7f50,#553c9a)] bg-clip-text bg-[length:200%] bg-[-200%] animate-[animated-gradient_3s_infinite_alternate-reverse]">
           {user ? 'Welcome to myJAM' : 'Login for more Genres!'}
         </h2>
       </div>
