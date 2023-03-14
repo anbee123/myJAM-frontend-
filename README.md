@@ -27,7 +27,7 @@ this is an app to provide user music list/songs in several genres
 
 * Express
 * React
-* Styled Component
+* Tailwind 
 * Rest API
 * MongoDB/Mongoose
 * Node
