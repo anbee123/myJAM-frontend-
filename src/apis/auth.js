@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api'
+const API_URL = 'https://myjam.herokuapp.com/api/'
 
 export const testApi = async () => {
-  const res = await axios.get(API_URL + '/test')
+  const res = await axios.get(API_URL + '/auth/test')
   return res.data
 }
 
