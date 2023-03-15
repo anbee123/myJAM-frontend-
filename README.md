@@ -31,7 +31,7 @@ this is an app to provide user music list/songs in several genres
 * Rest API
 * MongoDB/Mongoose
 * Node
-* JWT/Full CRUD
+* JWT
 
 ## Live link
 
